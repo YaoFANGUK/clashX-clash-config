@@ -71,3 +71,5 @@ systemctl restart trojan
 
 [点击下载140_1.dll](https://github.com/atrandys/trojan/raw/master/vcruntime140_1.dll)
 
+## 最新 —— 安装trojan-go
+https://www.bwgss.org/1245.html
