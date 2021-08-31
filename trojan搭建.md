@@ -52,12 +52,4 @@ bash <(curl -sL https://raw.githubusercontent.com/YaoFANGUK/clashX-clash-config/
 
 ```
 cd /usr/src && wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
-
 ```
-
-trojan服务端配置文件路径如下，如需修改内容，修改以下文件即可。
-
-```
-/usr/src/trojan/server.conf
-```
-
