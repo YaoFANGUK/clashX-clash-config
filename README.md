@@ -1,4 +1,5 @@
 ## 1. Clash 各版本下载地址
+
 - <a href="https://github.com/Dreamacro/clash/releases/tag/premium"> Clash Premium 命令行版 </a>: (兼容 Windows、macOS、Linux、OpenWRT 等多种平台）
 - <a href="https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public"> Clash Premium 图形用户界面版</a>:（ClashX Pro，兼容 macOS）
 - <a href="https://github.com/Fndroid/clash_for_windows_pkg/releases"> Clash Premium 图形用户界面版</a>: **【推荐，mac/windows亲测成功】**（Clash for Windows，兼容 Windows、macOS）
@@ -7,7 +8,8 @@
 
 #### 2.1 选中`Profiles`标签，新建配置文件
 
-<img src="https://s3.ax1x.com/2020/11/21/D1CE6O.png" height="500">
+
+
 <img src="https://s3.ax1x.com/2020/11/21/D1CrcT.png" height="500">
 
 #### 2.2 编辑配置文件
@@ -177,3 +179,109 @@ rules:
 #### 2.4 开启代理
 
 <img src="https://s3.ax1x.com/2020/11/21/D1inJI.md.png" height="500">
+
+
+
+## 3. Linux配置Clash 
+
+#### 3.1 Clash 下载
+
+在 Clash release 页面下载相应的版本，对于 Ubuntu 一般使用 clash-linux-amd64 版本：
+
+```shell
+wget https://github.com/Dreamacro/clash/releases/download/v1.14.0/clash-linux-amd64-v1.14.0.gz
+```
+
+> 如果直接 wget 速度较慢的话，可以本地下载完成后，使用 SFTP 上传到 Linux 服务器。
+
+然后使用 gunzip 命令解压，并重命名为 clash：
+
+```shell
+gunzip clash-linux-amd64-v1.14.0.gz
+mv clash-linux-amd64-v1.14.0 clash
+为 clash 添加可执行权限：
+```
+
+chmod u+x clash
+
+Clash 运行时需要 Country.mmdb 文件，当第一次启动 Clash 时（使用 ./clash 命令） 会自动下载（会下载至 /home/XXX/.config/clash 文件夹下）。自动下载可能会因网络原因较慢，可以访问该<a herf="https://github.com/Dreamacro/maxmind-geoip/releases">链接</a>手动下载。
+
+>  Country.mmdb 文件利用 GeoIP2 服务能识别互联网用户的地点位置，以供规则分流时使用。
+
+
+#### 3.2 Clash as a daemon
+
+将 Clash 转变为系统服务，从而使得 Clash 实现常驻后台运行、开机自启动等。
+
+> 普通用户需要 sudo 权限。
+
+##### 配置 systemd 服务
+
+Linux 系统使用 systemd 作为启动服务器管理机制，首先把 Clash 可执行文件拷贝到 ```/usr/local/bin``` 目录，相关配置拷贝到 ```/etc/clash``` 目录。
+
+```shell
+sudo mkdir /etc/clash
+sudo cp clash /usr/local/bin
+sudo cp config.yaml /etc/clash/
+sudo cp Country.mmdb /etc/clash/
+```
+
+
+创建 systemd 服务配置文件 ```sudo vim /etc/systemd/system/clash.service```：
+
+```
+[Unit]
+Description=Clash daemon, A rule-based proxy in Go.
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/usr/local/bin/clash -d /etc/clash
+
+[Install]
+WantedBy=multi-user.target
+```
+
+##### 使用 systemctl
+
+使用以下命令，让 Clash 开机自启动：
+
+```shell
+sudo systemctl enable clash
+```
+
+然后开启 Clash：
+
+```shell 
+sudo systemctl start clash
+```
+
+
+查看 Clash 日志：
+
+```shell
+sudo systemctl status clash
+sudo journalctl -xe
+```
+
+##### 使用代理
+
+利用 Export 命令使用代理
+Clash 运行后，其在后台监听某一端口。Ubuntu 下使用代理，需要 export 命令。根据 config 配置文可以查看到件Clash 代理端口（订阅转换后，端口为7890），设置系统代理命令为：
+
+```shell
+export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
+```
+
+
+可以将该命令添加到 .bashrc 中，登陆后该用户自动开启代理。
+
+取消系统代理：
+
+```shell
+unset  http_proxy  https_proxy  all_proxy
+```
+
+> 一般下载数据集时，记得取消代理。
+
