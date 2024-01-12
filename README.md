@@ -1,18 +1,12 @@
-## 1. Clash 各版本下载地址
+## 1. 设置配置文件 (以clash for windows为例)
 
-- <a href="https://github.com/Dreamacro/clash/releases/tag/premium"> Clash Premium 命令行版 </a>: (兼容 Windows、macOS、Linux、OpenWRT 等多种平台）
-- <a href="https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public"> Clash Premium 图形用户界面版</a>:（ClashX Pro，兼容 macOS）
-- <a href="https://github.com/Fndroid/clash_for_windows_pkg/releases"> Clash Premium 图形用户界面版</a>: **【推荐，mac/windows亲测成功】**（Clash for Windows，兼容 Windows、macOS）
-
-## 2. 设置配置文件 (以clash for windows为例)
-
-#### 2.1 选中`Profiles`标签，新建配置文件
+#### 1.1 选中`Profiles`标签，新建配置文件
 
 
 
 <img src="https://s3.ax1x.com/2020/11/21/D1CrcT.png" height="500">
 
-#### 2.2 编辑配置文件
+#### 1.2 编辑配置文件
 
 <img src="https://s3.ax1x.com/2020/11/21/D1CRE9.md.png" height="500">
 
@@ -170,21 +164,21 @@ rules:
 
 <img src="https://s3.ax1x.com/2020/11/21/D1Poin.png" height="500">
 
-#### 2.3 双击配置文件以生效
+#### 1.3 双击配置文件以生效
 
 <img src="https://s3.ax1x.com/2020/11/21/D1C7uD.png" height="500">
 
 <img src="https://s3.ax1x.com/2020/11/21/D1iVdH.md.png" height="500">
 
-#### 2.4 开启代理
+#### 1.4 开启代理
 
 <img src="https://s3.ax1x.com/2020/11/21/D1inJI.md.png" height="500">
 
 
 
-## 3. Linux配置Clash 
+## 2. Linux配置Clash 
 
-#### 3.1 Clash 下载
+#### 2.1 Clash 下载
 
 在 Clash release 页面下载相应的版本，对于 Ubuntu 一般使用 clash-linux-amd64 版本：
 
@@ -209,7 +203,7 @@ Clash 运行时需要 Country.mmdb 文件，当第一次启动 Clash 时（使�
 >  Country.mmdb 文件利用 GeoIP2 服务能识别互联网用户的地点位置，以供规则分流时使用。
 
 
-#### 3.2 Clash as a daemon
+#### 2.2 Clash as a daemon
 
 将 Clash 转变为系统服务，从而使得 Clash 实现常驻后台运行、开机自启动等。
 
