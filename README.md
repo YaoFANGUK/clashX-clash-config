@@ -27,11 +27,13 @@ proxies:
   - name: <节点1>
     type: trojan
     server: <节点1服务器域名>
+    skip-cert-verify: true  # 关闭证书验证
     port: 443
     password: <节点1密码>
   - name: <节点2>
     type: trojan
     server: <节点2服务器域名>
+    skip-cert-verify: true  # 关闭证书验证
     port: 443
     password: <节点2密码>
 proxy-groups:
