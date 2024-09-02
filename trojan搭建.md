@@ -45,11 +45,54 @@ bash <(curl -sL https://raw.githubusercontent.com/YaoFANGUK/clashX-clash-config/
 > ```
 
 
-
-
-
 ## BBR安装
 
 ```
 cd /usr/src && wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
 ```
+
+## 使用acme.sh脚本配置网站自动续签https ssl证书
+
+1. 下载acme.sh并安装
+```shell
+curl https://get.acme.sh | sh
+```
+
+2. 刷新环境变量
+```shell
+source /root/.bashrc
+```
+
+3. 修改默认CA为 LetsEncrypt
+```shell
+acme.sh --set-default-ca --server letsencrypt
+```
+
+4. 为示例域名www.sbdj.com申请ssl证书
+```shell
+acme.sh --issue -d www.sbdj.com --webroot /usr/share/nginx/html/
+```
+
+5. 安装证书到指定位置
+```shell
+acme.sh --install-cert -d www.sbdj.com --key-file       /usr/local/nginx/www.sbdj.com.key   --fullchain-file /usr/local/nginx/www.sbdj.com.crt
+```
+
+6. 配置trojan证书位置
+
+```shell
+vim /etc/trojan-go/config.json
+```
+7. 查看自动续签任务
+```shell
+crontab -l
+```
+
+
+
+
+
+
+
+
+
