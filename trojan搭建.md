@@ -75,7 +75,7 @@ acme.sh --issue -d www.sbdj.com --webroot /usr/share/nginx/html/
 
 5. 安装证书到指定位置
 ```shell
-acme.sh --install-cert -d www.sbdj.com --key-file       /usr/local/nginx/www.sbdj.com.key   --fullchain-file /usr/local/nginx/www.sbdj.com.crt
+acme.sh --install-cert -d abc.com --key-file /usr/local/nginx/abc.com.key --fullchain-file /usr/local/nginx/abc.com.crt
 ```
 
 6. 配置trojan证书位置
@@ -83,6 +83,8 @@ acme.sh --install-cert -d www.sbdj.com --key-file       /usr/local/nginx/www.sbd
 ```shell
 vim /etc/trojan-go/config.json
 ```
+
+
 7. 查看自动续签任务
 ```shell
 crontab -l
