@@ -1,5 +1,14 @@
 # Trojan-GO
 
+#### 脚本特点
+
+- 全自动配置伪装网站，网站位于/usr/share/nginx/html/目录，可自行修改替换。
+- 全自动申请配置SSL证书用于https网站，使用的是let’s encrypt证书。
+- SSL证书到期前会自动续期，免维护。
+- 自动配置开放80、443端口。
+- 自动配置好Trojan客户端文件及参数，下载即可使用。
+- 不支持Cloudflare等CDN服务，建议不要使用CDN。
+
 #### 安装依赖
 
 - CentOS
@@ -20,13 +29,19 @@ sudo apt install -y curl
 curl -O https://raw.githubusercontent.com/YaoFANGUK/clashX-clash-config/main/trojan.sh && chmod +x trojan.sh && ./trojan.sh
 ```
 
-<img src="https://z3.ax1x.com/2021/08/31/hUix41.png">
+## 安装BBR
 
+- Debian:
+```shell
+wget --no-check-certificate https://github.com/tcp-nanqinlang/general/releases/download/3.4.2.1/tcp_nanqinlang-fool-1.3.0.sh
+bash tcp_nanqinlang-fool-1.3.0.sh
+```
 
-
-根据自己的需求选择安装 trojan-go 或trojan-go+WS（+WS 版本能使用 CDN 中转，如果你需要 CDN 中转请选择“2”，trojan-go+WS 需要设置 WS 路径。一般默认选择“1”就好了）
-
-
+- CentOS:
+```shell
+wget --no-check-certificate https://raw.githubusercontent.com/tcp-nanqinlang/general/master/General/CentOS/bash/tcp_nanqinlang-1.3.2.sh
+bash tcp_nanqinlang-1.3.2.sh
+```
 
 #### Trojan配置文件
 
@@ -36,8 +51,6 @@ curl -O https://raw.githubusercontent.com/YaoFANGUK/clashX-clash-config/main/tro
 /etc/trojan-go/config.json
 ```
 
-
-
 >  重启trojan服务
 >
 > ```
@@ -45,13 +58,9 @@ curl -O https://raw.githubusercontent.com/YaoFANGUK/clashX-clash-config/main/tro
 > ```
 
 
-## BBR安装
+## acme.sh
 
-```
-cd /usr/src && wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
-```
-
-## 使用acme.sh脚本配置网站自动续签https ssl证书
+配置网站自动续签https ssl证书
 
 1. 下载acme.sh并安装
 ```shell
