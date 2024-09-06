@@ -17,7 +17,7 @@ sudo apt install -y curl
 #### 安装Trojan-GO
 
 ```
-bash <(curl -sL https://raw.githubusercontent.com/YaoFANGUK/clashX-clash-config/main/trojan.sh)
+curl -O https://raw.githubusercontent.com/YaoFANGUK/clashX-clash-config/main/trojan.sh && chmod +x trojan.sh && ./trojan.sh
 ```
 
 <img src="https://z3.ax1x.com/2021/08/31/hUix41.png">
