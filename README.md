@@ -195,10 +195,12 @@ wget https://github.com/Dreamacro/clash/releases/download/v1.14.0/clash-linux-am
 ```shell
 gunzip clash-linux-amd64-v1.14.0.gz
 mv clash-linux-amd64-v1.14.0 clash
-为 clash 添加可执行权限：
 ```
+为 clash 添加可执行权限：
 
+```
 chmod u+x clash
+```
 
 Clash 运行时需要 Country.mmdb 文件，当第一次启动 Clash 时（使用 ./clash 命令） 会自动下载（会下载至 /home/XXX/.config/clash 文件夹下）。自动下载可能会因网络原因较慢，可以访问该<a herf="https://github.com/Dreamacro/maxmind-geoip/releases">链接</a>手动下载。
 
