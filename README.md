@@ -135,7 +135,7 @@ rule-providers:
     path: ./ruleset/applications.yaml
     interval: 86400
 
-# 白名单模式-终端用（流量使用少）
+# 白名单模式-终端用（流量使用多）
 #rules:
 #  - RULE-SET,applications,DIRECT
 #  - DOMAIN,clash.razord.top,DIRECT
@@ -154,7 +154,7 @@ rule-providers:
 #  - GEOIP,CN,DIRECT
 #  - MATCH,PROXY
 
-# 黑名单模式-软路由用（流量使用多）
+# 黑名单模式-软路由用（流量使用少）
 rules:
   - RULE-SET,applications,DIRECT
   - DOMAIN,clash.razord.top,DIRECT
