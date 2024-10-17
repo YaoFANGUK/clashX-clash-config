@@ -100,13 +100,6 @@ rule-providers:
     path: ./ruleset/gfw.yaml
     interval: 86400
 
-  greatfire:
-    type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/greatfire.txt"
-    path: ./ruleset/greatfire.yaml
-    interval: 86400
-
   tld-not-cn:
     type: http
     behavior: domain
