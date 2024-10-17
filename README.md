@@ -194,7 +194,7 @@ rules:
 在 Clash release 页面下载相应的版本，对于 Ubuntu 一般使用 clash-linux-amd64 版本：
 
 ```shell
-wget https://github.com/Dreamacro/clash/releases/download/v1.14.0/clash-linux-amd64-v1.14.0.gz
+wget https://raw.githubusercontent.com/YaoFANGUK/clashX-clash-config/refs/heads/main/clash-linux-amd64-2023.08.17.gz
 ```
 
 > 如果直接 wget 速度较慢的话，可以本地下载完成后，使用 SFTP 上传到 Linux 服务器。
@@ -202,8 +202,8 @@ wget https://github.com/Dreamacro/clash/releases/download/v1.14.0/clash-linux-am
 然后使用 gunzip 命令解压，并重命名为 clash：
 
 ```shell
-gunzip clash-linux-amd64-v1.14.0.gz
-mv clash-linux-amd64-v1.14.0 clash
+gunzip clash-linux-amd64-2023.08.17.gz
+mv clash-linux-amd64 clash
 ```
 为 clash 添加可执行权限：
 
