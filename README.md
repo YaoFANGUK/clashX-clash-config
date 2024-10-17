@@ -142,23 +142,37 @@ rule-providers:
     path: ./ruleset/applications.yaml
     interval: 86400
 
+# 白名单模式-终端用（流量使用少）
+#rules:
+#  - RULE-SET,applications,DIRECT
+#  - DOMAIN,clash.razord.top,DIRECT
+#  - DOMAIN,yacd.haishan.me,DIRECT
+#  - RULE-SET,private,DIRECT
+#  - RULE-SET,reject,REJECT
+#  - RULE-SET,icloud,DIRECT
+#  - RULE-SET,apple,DIRECT
+#  - RULE-SET,google,DIRECT
+#  - RULE-SET,proxy,PROXY
+#  - RULE-SET,direct,DIRECT
+#  - RULE-SET,lancidr,DIRECT
+#  - RULE-SET,cncidr,DIRECT
+#  - RULE-SET,telegramcidr,PROXY
+#  - GEOIP,LAN,DIRECT
+#  - GEOIP,CN,DIRECT
+#  - MATCH,PROXY
+
+# 黑名单模式-软路由用（流量使用多）
 rules:
   - RULE-SET,applications,DIRECT
   - DOMAIN,clash.razord.top,DIRECT
   - DOMAIN,yacd.haishan.me,DIRECT
   - RULE-SET,private,DIRECT
   - RULE-SET,reject,REJECT
-  - RULE-SET,icloud,DIRECT
-  - RULE-SET,apple,DIRECT
-  - RULE-SET,google,DIRECT
-  - RULE-SET,proxy,PROXY
-  - RULE-SET,direct,DIRECT
-  - RULE-SET,lancidr,DIRECT
-  - RULE-SET,cncidr,DIRECT
+  - RULE-SET,tld-not-cn,PROXY
+  - RULE-SET,gfw,PROXY
   - RULE-SET,telegramcidr,PROXY
-  - GEOIP,LAN,DIRECT
-  - GEOIP,CN,DIRECT
-  - MATCH,PROXY
+  - MATCH,DIRECT
+
 
 ```
 
