@@ -14,6 +14,8 @@
 
 - 复制配置文件如下：
 
+> [参考配置](https://clash.wiki/configuration/configuration-reference.html)
+
 ```yaml
 mixed-port: 7890
 allow-lan: false
