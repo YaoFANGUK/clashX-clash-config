@@ -191,13 +191,7 @@ rules:
 
 #### 2.1 Clash 下载
 
-在 Clash release 页面下载相应的版本，对于 Ubuntu 一般使用 clash-linux-amd64 版本：
-
-```shell
-wget https://raw.githubusercontent.com/YaoFANGUK/clashX-clash-config/refs/heads/main/clash-linux-amd64-2023.08.17.gz
-```
-
-> 如果直接 wget 速度较慢的话，可以本地下载完成后，使用 SFTP 上传到 Linux 服务器。
+[clash-linux-amd64](https://raw.githubusercontent.com/YaoFANGUK/clashX-clash-config/refs/heads/main/clash-linux-amd64-2023.08.17.gz)
 
 然后使用 gunzip 命令解压，并重命名为 clash：
 
