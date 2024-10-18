@@ -83,6 +83,14 @@ sudo netfilter-persistent save
 sudo netfilter-persistent reload
 ```
 
+查看所有规则：
+```shell
+sudo iptables -L --line-numbers
+```
+根据编号删除规则(以INPUT 编号3为例)：
+```shell
+sudo iptables -D INPUT 3
+```
 
 
 
