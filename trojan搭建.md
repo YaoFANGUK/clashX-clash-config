@@ -54,11 +54,15 @@ sudo iptables -P OUTPUT ACCEPT
 sudo iptables -F
 ```
 
-> ps: Oracle自带的镜像默认设置了Iptable规则，关闭它
+> [Oracle CLoud] Oracle自带的镜像默认设置了Iptable规则，关闭它
+> ```shell 
 > sudo apt-get purge netfilter-persistent && sudo reboot
+> ```
 
-> 删除oracle-cloud-agent，防止甲骨文监控
+> [Oracle CLoud] 删除oracle-cloud-agent，防止甲骨文监控
+> ```shell
 > snap remove oracle-cloud-agent
+> ```
 
 #### 2.2 保存规则
 
