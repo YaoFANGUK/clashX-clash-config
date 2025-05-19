@@ -93,7 +93,22 @@ sudo iptables -D INPUT 3
 ```
 
 
+# 2. Xray安装
 
+#### 2.1 脚本特点
+
+系统支持：Ubuntu，Debian，CentOS，推荐使用 Ubuntu 22，谨慎使用 CentOS，脚本可能无法正常运行！
+
+
+#### 2.2 安装Xray
+
+```
+bash <(wget -qO- -o- https://raw.githubusercontent.com/YaoFANGUK/clashX-clash-config/main/vless.sh)
+```
+
+#### 2.3 管理Xray
+
+安装完成后，输入 xray 就能看到管理面板
 
 
 
