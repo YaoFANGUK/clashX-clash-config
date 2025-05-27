@@ -44,7 +44,6 @@ proxies:
     servername: dash.cloudflare.com   # 自定义回落域名SNI
     reality-opts: 
       public-key: <4CiE7y7ZPBXIZWzMwphuSH7qdZyisNjD3CDQGjmilmI>    # Reality public-key
-      short-id: a8c031ce         # Reality short-id
     client-fingerprint: chrome   # 自定义浏览器指纹  
 proxy-groups:
   - name: PROXY
