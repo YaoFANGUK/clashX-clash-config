@@ -32,12 +32,20 @@ proxies:
     skip-cert-verify: true  # 关闭证书验证
     port: 443
     password: <节点1密码>
-  - name: <节点2>
-    type: trojan
-    server: <节点2服务器域名>
-    skip-cert-verify: true  # 关闭证书验证
-    port: 443
-    password: <节点2密码>
+  - name: <节点2>              # 可以自定义节点名称
+    type: vless
+    server: <1.2.3.4>         # 解析的域名或IP
+    port: 44340               # 自定义端口
+    uuid: <f897325d-053d-45d1-899c-566692331f8>   # 自定义 UUID
+    network: tcp
+    udp: true
+    tls: true
+    flow: xtls-rprx-vision
+    servername: dash.cloudflare.com   # 自定义回落域名SNI
+    reality-opts: 
+      public-key: <4CiE7y7ZPBXIZWzMwphuSH7qdZyisNjD3CDQGjmilmI>    # Reality public-key
+      short-id: a8c031ce         # Reality short-id
+    client-fingerprint: chrome   # 自定义浏览器指纹  
 proxy-groups:
   - name: PROXY
     type: select
