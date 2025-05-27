@@ -198,21 +198,21 @@ rules:
 
 #### 2.1 Clash 下载
 
-[clash-linux-amd64](https://raw.githubusercontent.com/YaoFANGUK/clashX-clash-config/refs/heads/main/clash-linux-amd64-2023.08.17.gz)
+[clash-linux-amd64](https://raw.githubusercontent.com/YaoFANGUK/clashX-clash-config/refs/heads/main/Clash%E5%AE%A2%E6%88%B7%E7%AB%AF/clash.meta-linux-amd64-v1.19.9.zip)
 
-然后使用 gunzip 命令解压，并重命名为 clash：
+然后使用 unzip 命令解压，并重命名为 clash_meta：
 
 ```shell
-gunzip clash-linux-amd64-2023.08.17.gz
-mv clash-linux-amd64 clash
+unzip clash.meta-linux-amd64-v1.19.9.zip
+mv clash_meta /etc/openclash/core/
 ```
 为 clash 添加可执行权限：
 
 ```
-chmod u+x clash
+chmod u+x clash_meta
 ```
 
-Clash 运行时需要 Country.mmdb 文件，当第一次启动 Clash 时（使用 ./clash 命令） 会自动下载（会下载至 /home/XXX/.config/clash 文件夹下）。自动下载可能会因网络原因较慢，可以访问该<a herf="https://github.com/Dreamacro/maxmind-geoip/releases">链接</a>手动下载。
+Clash 运行时需要 Country.mmdb 文件，当第一次启动 Clash 时（使用 ./clash_meta 命令） 会自动下载（会下载至 /home/XXX/.config/clash 文件夹下）。自动下载可能会因网络原因较慢，可以访问该<a herf="https://github.com/Dreamacro/maxmind-geoip/releases">链接</a>手动下载。
 
 >  Country.mmdb 文件利用 GeoIP2 服务能识别互联网用户的地点位置，以供规则分流时使用。
 
@@ -229,7 +229,7 @@ Linux 系统使用 systemd 作为启动服务器管理机制，首先把 Clash �
 
 ```shell
 sudo mkdir /etc/clash
-sudo cp clash /usr/local/bin
+sudo cp clash_meta /usr/local/bin
 sudo cp config.yaml /etc/clash/
 sudo cp Country.mmdb /etc/clash/
 ```
